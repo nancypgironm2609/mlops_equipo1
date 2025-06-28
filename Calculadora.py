@@ -26,14 +26,14 @@ while ejecutar == True:
         a:float = float(input("primer numero: "))
         b:float = float(input("segundo numero: "))
         print(calculadora(a, b, opciones))
-    elif opciones == "restar":
-        a:float= float(input("primer numero: "))
-        b:float = float(input("segundo numero: "))
-        print(calculadora(a, b, opciones))
-    elif opciones == "multiplicar":
-        a:float = float(input("primer numero: "))
-        b:float = float(input("segundo numero: "))
-        print(calculadora(a, b, opciones))
+    # elif opciones == "restar":
+    #     a:float= float(input("primer numero: "))
+    #     b:float = float(input("segundo numero: "))
+    #     print(calculadora(a, b, opciones))
+    # elif opciones == "multiplicar":
+    #     a:float = float(input("primer numero: "))
+    #     b:float = float(input("segundo numero: "))
+    #     print(calculadora(a, b, opciones))
     elif opciones == "dividir":
         a:float = float(input("primer numero: "))
         b :float= float(input("segundo numero: "))
