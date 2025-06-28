@@ -19,4 +19,3 @@ def test_dividir_por_cero():
 
 def test_opcion_invalida():
     assert calculadora(3, 4, "potencia") == "Opción no válida."
-    
