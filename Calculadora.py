@@ -17,6 +17,7 @@ def calculadora(a,b,opcion):
     
 # Programa principal
 print("Bienvenido a la calculadora")
+print("Selecciona una operación:")
 print("Puedes realizar las siguientes operaciones: sumar, restar, multiplicar, dividir o salir.")
 ejecutar= True
 
