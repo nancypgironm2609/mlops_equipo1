@@ -17,5 +17,8 @@ def test_dividir():
 def test_dividir_por_cero():
     assert calculadora(10, 0, "dividir") == "No se puede dividir por cero."
 
+def test_potencia():
+    assert calculadora(2, 3, "potencia") == 8
+
 def test_opcion_invalida():
-    assert calculadora(3, 4, "potencia") == "Opción no válida."
+    assert calculadora(3, 4, "desconocida") == "Opción no válida."
