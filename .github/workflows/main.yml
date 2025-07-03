@@ -36,7 +36,7 @@ jobs:
       - name: Run flake8
         run: |
           # ignore errors
-          flake8 --ignore=E1,E23,W503,F403,F401,E402,E501,E302 tests/Integration/test_integracion.py
+          flake8 --ignore=E1,E23,W503,F403,F401,E402,E501,E302 tests/Integration/test_integracion.py tests/Unit/test_unit.py
           # stop the build if there are Python syntax errors or undefined names
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
@@ -65,3 +65,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest tests/Integration/test_integracion.py -v
+        pytest tests/Unit/test_unit.py -v
