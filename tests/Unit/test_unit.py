@@ -1,6 +1,4 @@
-# test_calculadora.py
-
-from calculadora_prueba import calculadora
+from Integration.calculadora_prueba import calculadora
 
 def test_sumar():
     assert calculadora(3, 2, "sumar") == 5
