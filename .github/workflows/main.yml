@@ -9,8 +9,9 @@ on:
 
 jobs:
   flake8-lint:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     name: Lint
+
     steps:
       - uses: actions/checkout@v3
 
@@ -27,13 +28,13 @@ jobs:
 
       - name: Run flake8
         run: |
-          flake8 --ignore=E1,E23,W503,F403,F401,E402,E501,E302 mlops_equipo1/tests/Integration/test_integracion.py mlops_equipo1/tests/Unit/test_unit.py
+          flake8 mlops_equipo1 --ignore=E1,E23,W503,F403,F401,E402,E501,E302
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
   pytest:
     needs: flake8-lint
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     name: Pytest
 
