@@ -1,5 +1,5 @@
-from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
-from mlops_equipo1.Funciones.Potencia import potencia
+from Funciones.RaizCuadrada import raiz_cuadrada
+from Funciones.Potencia import potencia
 
 import math
 

@@ -1,5 +1,5 @@
-from mlops_equipo1.Calculadora import calculadora
-from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
+from Calculadora import calculadora
+from Funciones.RaizCuadrada import raiz_cuadrada
 
 
 def test_sumar():
