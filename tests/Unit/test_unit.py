@@ -1,4 +1,5 @@
 from Integration.calculadora_prueba import calculadora
+from Funciones.RaizCuadrada import raiz_cuadrada
 
 def test_sumar():
     assert calculadora(3, 2, "sumar") == 5
@@ -20,3 +21,11 @@ def test_potencia():
 
 def test_opcion_invalida():
     assert calculadora(3, 4, "desconocida") == "Opción no válida."
+    
+def test_calculadora_raiz_cuadrada():
+    assert calculadora(16, 0, "raiz_cuadrada") == 4.0
+
+def test_calculadora_raiz_cuadrada_negativa():
+    assert calculadora(-4, 0, "raiz_cuadrada") == "No se puede calcular la raíz cuadrada de un número negativo."
+
+    

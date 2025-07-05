@@ -20,5 +20,8 @@ def test_dividir_por_cero():
 def test_potencia():
     assert calculadora(2, 3, "potencia") == 8
 
+def test_raiz_cuadrada():
+    assert calculadora(25, 0, "raiz_cuadrada") == 5
+    
 def test_opcion_invalida():
     assert calculadora(3, 4, "desconocida") == "Opción no válida."
