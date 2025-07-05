@@ -1,7 +1,7 @@
 # test_calculadora.py
-from Calculadora import calculadora
-from Funciones.RaizCuadrada import raiz_cuadrada
-from Funciones.Potencia import potencia
+from mlops_equipo1.Calculadora import calculadora
+from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
+from mlops_equipo1.Funciones.Potencia import potencia
 
 def test_sumar():
     assert calculadora(3, 2, "sumar") == 5
