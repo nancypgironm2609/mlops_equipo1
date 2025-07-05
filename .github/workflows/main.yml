@@ -56,4 +56,4 @@ jobs:
         working-directory: .
         run: |
           export PYTHONPATH=$(pwd)
-          pytest mlops_equipo1/tests -v
+          pytest tests -v
