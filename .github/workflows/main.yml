@@ -54,4 +54,12 @@ jobs:
       - name: Run tests with pytest
         run: |
           export PYTHONPATH="${PYTHONPATH}:${{ github.workspace }}"
+          echo "Current working directory:"
+          pwd
+          echo "Directory structure:"
+          find . -name "*.py" | head -20
+          echo "Contents of mlops_equipo1 directory:"
+          ls -la mlops_equipo1/ || echo "mlops_equipo1 directory not found"
+          echo "Contents of Funciones directory:"
+          ls -la mlops_equipo1/Funciones/ || echo "Funciones directory not found"
           pytest tests -v
