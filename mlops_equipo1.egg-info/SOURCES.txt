@@ -1,3 +1,4 @@
+MANIFEST.in
 README.md
 pyproject.toml
 setup.py
@@ -6,3 +7,9 @@ mlops_equipo1.egg-info/SOURCES.txt
 mlops_equipo1.egg-info/dependency_links.txt
 mlops_equipo1.egg-info/requires.txt
 mlops_equipo1.egg-info/top_level.txt
+tests/__init__.py
+tests/Integration/__init__.py
+tests/Integration/calculadora_prueba.py
+tests/Integration/test_integracion.py
+tests/Unit/__init__.py
+tests/Unit/test_unit.py

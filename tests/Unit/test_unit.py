@@ -1,6 +1,14 @@
-from mlops_equipo1.Calculadora import calculadora
-from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
-from mlops_equipo1.Funciones.Potencia import potencia
+try:
+    from mlops_equipo1.Calculadora import calculadora
+    from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
+    from mlops_equipo1.Funciones.Potencia import potencia
+except ImportError:
+    import sys
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+    from mlops_equipo1.Calculadora import calculadora
+    from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
+    from mlops_equipo1.Funciones.Potencia import potencia
 
 
 def test_sumar():
