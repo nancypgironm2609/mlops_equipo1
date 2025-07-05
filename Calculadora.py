@@ -76,7 +76,7 @@ except ImportError:
                     try:
                         files = os.listdir(dir_path)
                         print(f"     Archivos: {files}")
-                    except:
+                    except (OSError, PermissionError):
                         print("     No se pudo listar el directorio")
             
             potencia_path = None
