@@ -25,6 +25,8 @@ def calculadora(a,b,opcion):
         return "Opción no válida."
     
 # Programa principal
+print(calculadora(25, 0, "raiz_cuadrada") == 5)
+
 print("Bienvenido a la calculadora")
 print("Selecciona una operación:")
 print("Puedes realizar las siguientes operaciones: sumar, restar, multiplicar, dividir,raiz cuadrada o salir.")
