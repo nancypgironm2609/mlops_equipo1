@@ -1,6 +1,6 @@
 from Calculadora import calculadora
 from Funciones.RaizCuadrada import raiz_cuadrada
-
+from Funciones.Potencia import potencia  # ✅ IMPORT CORRECTO
 
 def test_sumar():
     assert calculadora(3, 2, "sumar") == 5
