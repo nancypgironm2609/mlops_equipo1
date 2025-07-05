@@ -53,6 +53,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run tests with pytest
+        working-directory: mlops_equipo1
         run: |
-          export PYTHONPATH=${{ github.workspace }}/mlops_equipo1
-          pytest mlops_equipo1/tests -v
+          export PYTHONPATH=$(pwd)
+          pytest tests -v
