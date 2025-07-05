@@ -1,6 +1,7 @@
 # test_calculadora.py
 
-from calculadora import calculadora
+from mlops_equipo1.Calculadora import calculadora
+
 
 def test_sumar():
     assert calculadora(3, 2, "sumar") == 5
