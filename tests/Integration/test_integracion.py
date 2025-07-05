@@ -22,6 +22,6 @@ def test_potencia():
 
 def test_raiz_cuadrada():
     assert calculadora(25, 0, "raiz_cuadrada") == 5
-    
+
 def test_opcion_invalida():
     assert calculadora(3, 4, "desconocida") == "Opción no válida."

@@ -27,4 +27,3 @@ def test_calculadora_raiz_cuadrada():
 
 def test_calculadora_raiz_cuadrada_negativa():
     assert calculadora(-4, 0, "raiz_cuadrada") == "No se puede calcular la raíz cuadrada de un número negativo."
-
