@@ -28,9 +28,9 @@ jobs:
 
       - name: Run flake8
         run: |
-          flake8 mlops_equipo1 --ignore=E1,E23,W503,F403,F401,E402,E501,E302
-          flake8 mlops_equipo1 --count --select=E9,F63,F7,F82 --show-source --statistics
-          flake8 mlops_equipo1 --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+          flake8 . --ignore=E1,E23,W503,F403,F401,E402,E501,E302
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
   pytest:
     needs: flake8-lint
@@ -54,5 +54,5 @@ jobs:
 
       - name: Run tests with pytest
         run: |
-          export PYTHONPATH=${{ github.workspace }}/mlops_equipo1
-          pytest mlops_equipo1/tests -v
+          export PYTHONPATH=${{ github.workspace }}
+          pytest tests -v
