@@ -53,5 +53,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run tests with pytest
         run: |
-          PYTHONPATH=${{ github.workspace }} pytest mlops_equipo1/tests -v
+          PYTHONPATH=${{ github.workspace }} pytest mlops_equipo1/tests/Integration mlops_equipo1/tests/Unit -v
+
 
