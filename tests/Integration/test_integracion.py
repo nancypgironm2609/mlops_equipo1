@@ -1,10 +1,7 @@
 # test_calculadora.py
-
 from Calculadora import calculadora
 from Funciones.RaizCuadrada import raiz_cuadrada
 from Funciones.Potencia import potencia
-
-
 
 def test_sumar():
     assert calculadora(3, 2, "sumar") == 5
