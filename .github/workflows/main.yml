@@ -55,5 +55,5 @@ jobs:
       - name: Run tests with pytest
         working-directory: .
         run: |
-          export PYTHONPATH=$(pwd):$(pwd)/Funciones
+          export PYTHONPATH=$(pwd)
           pytest tests -v
