@@ -29,9 +29,12 @@ except ImportError:
                 os.path.dirname(__file__),
                 os.path.join(os.getcwd(), 'mlops_equipo1', 'Funciones'),
                 os.path.join(os.getcwd(), 'Funciones'),
-                os.path.join(os.path.dirname(__file__), '..', 'mlops_equipo1', 'Funciones'),
-                # Agregar la ruta correcta para GitHub Actions
+                # Ruta para estructura duplicada (GitHub Actions)
                 os.path.join(os.getcwd(), 'mlops_equipo1', 'mlops_equipo1', 'Funciones'),
+                # Rutas relativas hacia arriba y luego hacia abajo
+                os.path.join(os.path.dirname(__file__), '..', 'mlops_equipo1', 'Funciones'),
+                os.path.join(os.path.dirname(__file__), '..', '..', 'mlops_equipo1', 'Funciones'),
+                os.path.join(os.path.dirname(__file__), '..', '..', 'mlops_equipo1', 'mlops_equipo1', 'Funciones'),
             ]
             
             potencia_path = None

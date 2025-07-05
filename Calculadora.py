@@ -24,14 +24,44 @@ except ImportError:
             # Estrategia 4: Buscar archivos de manera más robusta
             import importlib.util
             
-            # Buscar archivos en posibles ubicaciones
+            def find_file_exhaustive(filename, start_dir=None):
+                """Busca un archivo de manera exhaustiva en el árbol de directorios"""
+                if start_dir is None:
+                    start_dir = os.path.dirname(__file__)
+                
+                # Buscar hacia arriba hasta 3 niveles
+                search_dirs = [start_dir]
+                current = start_dir
+                for _ in range(3):
+                    parent = os.path.dirname(current)
+                    if parent != current:
+                        search_dirs.append(parent)
+                        current = parent
+                    else:
+                        break
+                
+                # Para cada directorio, buscar hacia abajo
+                for base_dir in search_dirs:
+                    for root, dirs, files in os.walk(base_dir):
+                        if filename in files:
+                            return os.path.join(root, filename)
+                
+                return None
+            
+            # Buscar archivos en posibles ubicaciones de manera más exhaustiva
             possible_dirs = [
+                # Ruta relativa normal
                 os.path.join(os.path.dirname(__file__), 'Funciones'),
+                # Ruta desde directorio de trabajo
                 os.path.join(os.getcwd(), 'mlops_equipo1', 'Funciones'),
                 os.path.join(os.getcwd(), 'Funciones'),
-                os.path.join(os.path.dirname(__file__), '..', 'mlops_equipo1', 'Funciones'),
-                # Agregar la ruta correcta para GitHub Actions
+                # Ruta para estructura duplicada (GitHub Actions)
                 os.path.join(os.getcwd(), 'mlops_equipo1', 'mlops_equipo1', 'Funciones'),
+                # Ruta relativa hacia arriba y luego hacia abajo
+                os.path.join(os.path.dirname(__file__), '..', 'mlops_equipo1', 'Funciones'),
+                # Más variaciones para casos edge
+                os.path.join(os.path.dirname(__file__), '..', '..', 'mlops_equipo1', 'Funciones'),
+                os.path.join(os.path.dirname(__file__), '..', '..', 'mlops_equipo1', 'mlops_equipo1', 'Funciones'),
             ]
             
             # Debug: imprimir información sobre las rutas que se están buscando
@@ -74,7 +104,30 @@ except ImportError:
                 spec.loader.exec_module(raiz_module)
                 raiz_cuadrada = raiz_module.raiz_cuadrada
             else:
-                raise ImportError("No se pudieron encontrar los archivos Potencia.py y RaizCuadrada.py")
+                # Búsqueda exhaustiva como último recurso
+                print("DEBUG - Iniciando búsqueda exhaustiva...")
+                potencia_path = find_file_exhaustive('Potencia.py')
+                raiz_path = find_file_exhaustive('RaizCuadrada.py')
+                
+                if potencia_path and raiz_path:
+                    print(f"DEBUG - Encontrado Potencia.py en: {potencia_path}")
+                    print(f"DEBUG - Encontrado RaizCuadrada.py en: {raiz_path}")
+                    
+                    # Cargar Potencia
+                    spec = importlib.util.spec_from_file_location("Potencia", potencia_path)
+                    potencia_module = importlib.util.module_from_spec(spec)
+                    spec.loader.exec_module(potencia_module)
+                    potencia = potencia_module.potencia
+                    
+                    # Cargar RaizCuadrada
+                    spec = importlib.util.spec_from_file_location("RaizCuadrada", raiz_path)
+                    raiz_module = importlib.util.module_from_spec(spec)
+                    spec.loader.exec_module(raiz_module)
+                    raiz_cuadrada = raiz_module.raiz_cuadrada
+                else:
+                    print(f"DEBUG - No encontrado Potencia.py: {potencia_path}")
+                    print(f"DEBUG - No encontrado RaizCuadrada.py: {raiz_path}")
+                    raise ImportError("No se pudieron encontrar los archivos Potencia.py y RaizCuadrada.py")
 
 def calculadora(a, b, opcion):
     opcion = opcion.strip().lower()  # ← limpia espacios y capitalización
