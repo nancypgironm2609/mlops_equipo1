@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: mlops_equipo1
+Version: 0.1.0
+Summary: Proyecto MLOps Equipo 1 - Calculadora con funciones matemáticas
+Author-email: Equipo 1 <equipo1@example.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Requires-Dist: pytest>=6.0; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Dynamic: requires-python
+
+# mlops_equipo1
+Repositorio de mlops publico compartido del equipo 1. 

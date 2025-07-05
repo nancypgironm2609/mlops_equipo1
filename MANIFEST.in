@@ -1,0 +1,5 @@
+include README.md
+include pyproject.toml
+include setup.py
+recursive-include mlops_equipo1 *.py
+recursive-include tests *.py

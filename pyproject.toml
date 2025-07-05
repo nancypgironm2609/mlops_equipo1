@@ -23,6 +23,9 @@ test = [
 where = ["."]
 include = ["mlops_equipo1*"]
 
+[tool.setuptools.package-dir]
+"" = "."
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
