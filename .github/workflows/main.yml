@@ -52,4 +52,4 @@ jobs:
 
       - name: Run tests with pytest
         run: |
-          PYTHONPATH=${{ github.workspace }} pytest -v
+          PYTHONPATH=${{ github.workspace }} pytest tests -v
