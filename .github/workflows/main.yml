@@ -55,4 +55,4 @@ jobs:
       - name: Run tests with pytest
         run: |
           export PYTHONPATH=${{ github.workspace }}
-          pytest mlops_equipo1/tests -v
+          pytest tests -v
