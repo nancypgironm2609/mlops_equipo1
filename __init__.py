@@ -26,9 +26,11 @@ except ImportError:
             # Buscar Calculadora.py en posibles ubicaciones
             possible_dirs = [
                 os.path.dirname(__file__),
-                os.path.join(os.path.dirname(__file__), '..', 'mlops_equipo1'),
                 os.path.join(os.getcwd(), 'mlops_equipo1'),
                 os.getcwd(),
+                os.path.join(os.path.dirname(__file__), '..', 'mlops_equipo1'),
+                # Agregar la ruta correcta para GitHub Actions
+                os.path.join(os.getcwd(), 'mlops_equipo1', 'mlops_equipo1'),
             ]
             
             calculadora_path = None

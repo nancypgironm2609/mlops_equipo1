@@ -27,10 +27,27 @@ except ImportError:
             # Buscar archivos en posibles ubicaciones
             possible_dirs = [
                 os.path.join(os.path.dirname(__file__), 'Funciones'),
-                os.path.join(os.path.dirname(__file__), '..', 'mlops_equipo1', 'Funciones'),
                 os.path.join(os.getcwd(), 'mlops_equipo1', 'Funciones'),
                 os.path.join(os.getcwd(), 'Funciones'),
+                os.path.join(os.path.dirname(__file__), '..', 'mlops_equipo1', 'Funciones'),
+                # Agregar la ruta correcta para GitHub Actions
+                os.path.join(os.getcwd(), 'mlops_equipo1', 'mlops_equipo1', 'Funciones'),
             ]
+            
+            # Debug: imprimir información sobre las rutas que se están buscando
+            print(f"DEBUG - __file__: {__file__}")
+            print(f"DEBUG - os.getcwd(): {os.getcwd()}")
+            print(f"DEBUG - os.path.dirname(__file__): {os.path.dirname(__file__)}")
+            print("DEBUG - Buscando en directorios:")
+            for i, dir_path in enumerate(possible_dirs):
+                exists = os.path.exists(dir_path)
+                print(f"  {i+1}. {dir_path} -> {'EXISTE' if exists else 'NO EXISTE'}")
+                if exists:
+                    try:
+                        files = os.listdir(dir_path)
+                        print(f"     Archivos: {files}")
+                    except:
+                        print("     No se pudo listar el directorio")
             
             potencia_path = None
             raiz_path = None
