@@ -51,9 +51,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
       - name: Run tests with pytest
-        working-directory: .
         run: |
-          export PYTHONPATH=$(pwd)
-          pytest tests -v
+          PYTHONPATH=${{ github.workspace }} pytest mlops_equipo1/tests -v
+
