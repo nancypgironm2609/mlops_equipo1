@@ -56,10 +56,17 @@ jobs:
           export PYTHONPATH="${PYTHONPATH}:${{ github.workspace }}"
           echo "Current working directory:"
           pwd
-          echo "Directory structure:"
+          echo "PYTHONPATH: $PYTHONPATH"
+          echo "Full directory tree:"
+          tree -a -L 3 || find . -type d | head -20
+          echo "Python files in the workspace:"
           find . -name "*.py" | head -20
-          echo "Contents of mlops_equipo1 directory:"
-          ls -la mlops_equipo1/ || echo "mlops_equipo1 directory not found"
-          echo "Contents of Funciones directory:"
-          ls -la mlops_equipo1/Funciones/ || echo "Funciones directory not found"
+          echo "Checking for mlops_equipo1 directories:"
+          find . -name "mlops_equipo1" -type d
+          echo "Checking for Funciones directories:"
+          find . -name "Funciones" -type d
+          echo "Looking for Potencia.py:"
+          find . -name "Potencia.py"
+          echo "Looking for RaizCuadrada.py:"
+          find . -name "RaizCuadrada.py"
           pytest tests -v
