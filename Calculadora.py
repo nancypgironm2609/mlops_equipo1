@@ -23,7 +23,7 @@ def calculadora(a, b, opcion):
         else:
             return raiz_cuadrada(a)
     elif opcion == "potencia":
-        return potencia(a, b)    
+        return potencia(a, b)
     elif opcion == "salir":
         return "Saliendo del programa."
     else:
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     print("Bienvenido a la calculadora")
     print("Selecciona una operación:")
     print("Puedes realizar las siguientes operaciones: sumar, restar, multiplicar, dividir,raiz cuadrada o salir.")
-    
+
     ejecutar = True
 
     while ejecutar:
@@ -68,12 +68,11 @@ if __name__ == "__main__":
         elif opciones == "raiz_cuadrada":
             a = float(input("Número: "))
             print(calculadora(a, 0, opciones))
-            
+
         elif opciones == "potencia":
             a = float(input("Base: "))
             b = float(input("Exponente: "))
             print(calculadora(a, b, opciones))
-    
 
         elif opciones == "salir":
             print("Saliendo del programa.")
