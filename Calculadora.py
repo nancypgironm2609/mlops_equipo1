@@ -1,7 +1,15 @@
-from .Funciones.Potencia import potencia
-from .Funciones.RaizCuadrada import raiz_cuadrada
-
+# Importaciones directas de funciones
+import os
+import sys
 import math
+
+# Agregar el directorio de Funciones al path
+funciones_dir = os.path.join(os.path.dirname(__file__), 'Funciones')
+if funciones_dir not in sys.path:
+    sys.path.insert(0, funciones_dir)
+
+from Potencia import potencia
+from RaizCuadrada import raiz_cuadrada
 
 def calculadora(a, b, opcion):
     opcion = opcion.strip().lower()  # ← limpia espacios y capitalización
