@@ -8,10 +8,11 @@ def potencia(base, exponente):
 
     Retorna:
         float: El resultado de base ** exponente.
+
+    Ejemplo:
+        >>> potencia(2, 3)
+        8
+        >>> potencia(5, 2)
+        25
     """
-    try:
-        return base ** exponente
-    except OverflowError:
-        return "Resultado demasiado grande para representarse."
-    except TypeError:
-        return "Los valores deben ser números."
+    return base ** exponente
