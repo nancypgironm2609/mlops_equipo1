@@ -19,9 +19,8 @@ test = [
     "pytest-cov"
 ]
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["mlops_equipo1*"]
+[tool.setuptools]
+packages = ["mlops_equipo1", "mlops_equipo1.Funciones"]
 
 [tool.setuptools.package-dir]
 "" = "."
