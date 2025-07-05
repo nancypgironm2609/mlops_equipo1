@@ -1,9 +1,5 @@
-try:
-    from .Funciones.Potencia import potencia
-    from .Funciones.RaizCuadrada import raiz_cuadrada
-except ImportError:
-    from mlops_equipo1.Funciones.Potencia import potencia
-    from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
+from .Funciones.Potencia import potencia
+from .Funciones.RaizCuadrada import raiz_cuadrada
 
 import math
 

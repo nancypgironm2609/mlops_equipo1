@@ -1,15 +1,15 @@
 # test_calculadora.py
-try:
-    from mlops_equipo1.Calculadora import calculadora
-    from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
-    from mlops_equipo1.Funciones.Potencia import potencia
-except ImportError:
-    import sys
-    import os
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-    from mlops_equipo1.Calculadora import calculadora
-    from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
-    from mlops_equipo1.Funciones.Potencia import potencia
+import sys
+import os
+
+# Agregar el directorio raíz del proyecto al path
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
+from mlops_equipo1.Calculadora import calculadora
+from mlops_equipo1.Funciones.RaizCuadrada import raiz_cuadrada
+from mlops_equipo1.Funciones.Potencia import potencia
 
 def test_sumar():
     assert calculadora(3, 2, "sumar") == 5
